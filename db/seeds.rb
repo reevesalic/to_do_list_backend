@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-finacial = Category.create(name: "Financial")
+financial = Category.create(name: "Financial")
 health = Category.create(name: "Health")
 misc = Category.create(name: "Misc")
+
+Task.create(task: "Call bank", phone_number: 123456789, category_id: financial.id)
