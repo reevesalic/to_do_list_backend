@@ -10,3 +10,6 @@ health = Category.create(name: "Health")
 misc = Category.create(name: "Misc")
 
 Task.create(task: "Call bank", phone_number: 123456789, category_id: financial.id)
+Task.create(task: "Call Dr", phone_number: 123456789, category_id: health.id)
+Task.create(task: "Call credit card company", phone_number: 123456789, category_id: financial.id)
+Task.create(task: "Clean living room", phone_number: 123456789, category_id: misc.id)
