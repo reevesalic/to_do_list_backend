@@ -1,4 +1,4 @@
-class API::V1:TasksController < ApplicationController
+class Api::V1::TasksController < ApplicationController
 
      def index
           @tasks = Task.all
@@ -7,27 +7,27 @@ class API::V1:TasksController < ApplicationController
 
      def show
           @task = Task.find(params[:id])
-          render json: @tasks, status: 200
+          render json: @task, status: 200
      end
 
      def create
           @task = Task.create(task_params)
-          render json: @tasks, status: 200
+          render json: @task, status: 200
      end
 
      def update
           @task = Task.find(params[:id])
           @task.update(task_params)
-          render json: {@taskId: @task.id}
+          render json: @task, status: 200
      end
 
      def destroy
           @task = Task.find(params[:id])
           @task.delete
-          render json: @tasks, status: 200
+          render json: {taskId: @task.id}
      end
      private
      def task_params
-          params.require(:note).permit(:category)
+          params.require(:task).permit(:task, :phone_number, :category_id)
      end
 end
